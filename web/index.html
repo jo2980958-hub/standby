@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Standby</title>
+<meta name="description" content="Readiness pack for households that depend on electricity at home.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/standby.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the pack</a>
+
+<div class="topbar">
+  <div class="topbar-brand">
+    <span class="brand-tile" aria-hidden="true">S</span>
+    <span class="brand-name">Standby</span>
+  </div>
+  <div class="topbar-main">
+    <div class="topbar-switch">
+      <label class="sr" for="hh-switch" style="position:absolute;left:-9999px">Household</label>
+      <select id="hh-switch"></select>
+    </div>
+    <div class="topbar-right"></div>
+  </div>
+</div>
+
+<div class="app">
+  <header class="masthead" id="masthead">
+    <button class="primary" type="button" id="run-btn">
+      <svg class="ico" viewBox="0 0 16 16" fill="currentColor"><path d="M9 1.5 3.5 9H7l-1 5.5L12.5 7H9z"/></svg>
+      <span>Run it</span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a class="nav-link" href="#/pack" data-view="pack">
+        <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 1.8H4a1.2 1.2 0 0 0-1.2 1.2v10a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2V5.5z"/><path d="M9.5 1.8v3.7h3.7"/><path d="M5.6 9h4.8M5.6 11.4h3.2"/></svg>
+        <span>Readiness</span>
+      </a>
+      <a class="nav-link" href="#/households" data-view="households">
+        <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.2 7.4 8 2.4l5.8 5"/><path d="M3.6 6.6v6.8h8.8V6.6"/><path d="M6.6 13.4V9.6h2.8v3.8"/></svg>
+        <span>Households</span>
+      </a>
+      <a class="nav-link" href="#/record" data-view="record">
+        <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1.8 13.4h12.4"/><path d="M2.4 11.4 5.2 6l2.8 3.4L10.6 3l3 8.4"/></svg>
+        <span>Outage record</span>
+      </a>
+    </nav>
+
+    <div class="rail-foot">
+      <p class="rail-meta"><span>Actions done</span><strong id="rail-count">0 of 0</strong></p>
+      <div class="rail-bar" aria-hidden="true"><span id="rail-bar-fill"></span></div>
+    </div>
+  </header>
+
+  <div class="col">
+    <main id="main" tabindex="-1">
+      <div class="shell" id="view"><p class="loading">Loading.</p></div>
+    </main>
+    <footer class="site-foot">
+      <div class="shell">
+        <p>Device hours come from the manufacturers' manuals. Outage hours come from the EAGLE-I county record (ORNL, CC BY 4.0). Alerts are National Weather Service products. Counts are HHS emPOWER.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="/standby.js"></script>
+</body>
+</html>

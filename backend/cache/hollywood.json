@@ -1,0 +1,244 @@
+{
+ "raw": {
+  "headline": "Household lacks enough backup for a 136-hour outage",
+  "decision": "Leave for a powered location before the storm; current backup (6.5 h) is far below the 136-hour outage record.",
+  "items": [
+   {
+    "id": "p0d0",
+    "requirement": "Keep both Inogen batteries fully charged",
+    "gap": "Only 6.5 h planned backup vs 136 h outage",
+    "actions": [
+     "Charge both batteries on mains now",
+     "Verify car-DC input works for charging",
+     "Label batteries with charge date"
+    ]
+   },
+   {
+    "id": "p0d1",
+    "requirement": "Have an external power source for the stationary concentrator",
+    "gap": "Zero backup hours; concentrator stops when power fails",
+    "actions": [
+     "Obtain a compatible battery backup unit",
+     "Connect concentrator to outdoor generator if available",
+     "Keep spare oxygen cylinders as backup"
+    ]
+   },
+   {
+    "id": "p1d0",
+    "requirement": "Provide backup power for the CPAP machine",
+    "gap": "No internal battery; CPAP stops without mains",
+    "actions": [
+     "Purchase a CPAP-compatible battery pack",
+     "Test the pack with the device before storm",
+     "Store the pack fully charged and accessible"
+    ]
+   }
+  ],
+  "missing": [
+   {
+    "device": "Portable generator",
+    "why": "Provides power for all medical devices when grid fails",
+    "action": "Buy a generator rated for medical device use and store fuel safely"
+   },
+   {
+    "device": "Uninterruptible power supply (UPS) for CPAP",
+    "why": "Keeps CPAP running during brief outages until generator starts",
+    "action": "Select a UPS with sufficient runtime for the CPAP load"
+   },
+   {
+    "device": "Spare oxygen cylinders",
+    "why": "Ensures oxygen supply if concentrators lose power",
+    "action": "Obtain at least two full-size cylinders and a regulator"
+   }
+  ],
+  "priority": [
+   {
+    "item_id": "p0d0",
+    "text": "Charge both Inogen batteries fully now"
+   },
+   {
+    "item_id": "p0d1",
+    "text": "Get a battery backup for the stationary concentrator"
+   },
+   {
+    "item_id": "p1d0",
+    "text": "Obtain a CPAP-compatible battery pack and charge it"
+   },
+   {
+    "item_id": "household",
+    "text": "Acquire a portable generator and test before storm"
+   },
+   {
+    "item_id": "household",
+    "text": "Store spare oxygen cylinders and verify regulator function"
+   }
+  ]
+ },
+ "pack": {
+  "household": {
+   "id": "hollywood",
+   "name": "Hollywood, FL household",
+   "place": "broward",
+   "place_label": "Broward County, FL",
+   "zip": "33021"
+  },
+  "event": {
+   "key": "irma",
+   "name": "Hurricane Irma",
+   "hours_over_10pct": 136,
+   "peak": 709360,
+   "peak_pct": 55,
+   "pct_72h": 22,
+   "out_72h_after_peak": 284800,
+   "harm": "16 carbon monoxide deaths after Irma; 3 oxygen-dependent patients and 17 heat deaths tied to power loss (CDC MMWR 2018)."
+  },
+  "empower": {
+   "scope": "zip",
+   "zip": "33021",
+   "benes": 10605,
+   "power": 380,
+   "oxygen": 97,
+   "name": "Hollywood"
+  },
+  "people": [
+   {
+    "name": "Marcus",
+    "items": [
+     {
+      "id": "p0d0",
+      "device": "inogen_g5",
+      "label": "Inogen One G5",
+      "role": "Portable oxygen concentrator",
+      "kind": "oxygen",
+      "opts": {
+       "batteries": "2"
+      },
+      "option_label": "2 batteries",
+      "status": "short",
+      "best_h": 13.0,
+      "plan_h": 6.5,
+      "need_h": 136,
+      "cover": "Up to 13 h at flow setting 1",
+      "facts": [
+       "Double battery: up to 13 h (manual); runtime falls at higher flow settings.",
+       "Recharge takes up to 6 h on mains.",
+       "Car DC input 13.5-15.0 V, 10 A max."
+      ],
+      "via_generator": false,
+      "source": "Inogen One G5 user manual, rev C",
+      "requirement": "Keep both Inogen batteries fully charged",
+      "gap": "Only 6.5 h planned backup vs 136 h outage",
+      "actions": [
+       "Charge both batteries on mains now",
+       "Verify car-DC input works for charging",
+       "Label batteries with charge date"
+      ]
+     },
+     {
+      "id": "p0d1",
+      "device": "stationary_o2",
+      "label": "Home oxygen concentrator",
+      "role": "Stationary oxygen concentrator",
+      "kind": "oxygen",
+      "opts": {
+       "backup": "none"
+      },
+      "option_label": "No cylinders",
+      "status": "gap",
+      "best_h": 0,
+      "plan_h": 0,
+      "need_h": 136,
+      "cover": "None",
+      "facts": [
+       "Mains only; stops when the power stops."
+      ],
+      "via_generator": false,
+      "source": "No wattage or runtime in the sources we hold",
+      "requirement": "Have an external power source for the stationary concentrator",
+      "gap": "Zero backup hours; concentrator stops when power fails",
+      "actions": [
+       "Obtain a compatible battery backup unit",
+       "Connect concentrator to outdoor generator if available",
+       "Keep spare oxygen cylinders as backup"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Doreen",
+    "items": [
+     {
+      "id": "p1d0",
+      "device": "airsense",
+      "label": "ResMed AirSense 11",
+      "role": "CPAP",
+      "kind": "sleep",
+      "opts": {
+       "battery": "none"
+      },
+      "option_label": "Mains only",
+      "status": "gap",
+      "best_h": 0,
+      "plan_h": 0,
+      "need_h": 136,
+      "cover": "None",
+      "facts": [
+       "No internal battery; stops when the power stops."
+      ],
+      "via_generator": false,
+      "source": "ResMed Air11 DC-DC converter user guide",
+      "requirement": "Provide backup power for the CPAP machine",
+      "gap": "No internal battery; CPAP stops without mains",
+      "actions": [
+       "Purchase a CPAP-compatible battery pack",
+       "Test the pack with the device before storm",
+       "Store the pack fully charged and accessible"
+      ]
+     }
+    ]
+   }
+  ],
+  "plan_fraction": 0.5,
+  "headline": "Household lacks enough backup for a 136-hour outage",
+  "decision": "Leave for a powered location before the storm; current backup (6.5 h) is far below the 136-hour outage record.",
+  "priority": [
+   {
+    "item_id": "p0d0",
+    "text": "Charge both Inogen batteries fully now"
+   },
+   {
+    "item_id": "p0d1",
+    "text": "Get a battery backup for the stationary concentrator"
+   },
+   {
+    "item_id": "p1d0",
+    "text": "Obtain a CPAP-compatible battery pack and charge it"
+   },
+   {
+    "item_id": "household",
+    "text": "Acquire a portable generator and test before storm"
+   },
+   {
+    "item_id": "household",
+    "text": "Store spare oxygen cylinders and verify regulator function"
+   }
+  ],
+  "missing": [
+   {
+    "device": "Portable generator",
+    "why": "Provides power for all medical devices when grid fails",
+    "action": "Buy a generator rated for medical device use and store fuel safely"
+   },
+   {
+    "device": "Uninterruptible power supply (UPS) for CPAP",
+    "why": "Keeps CPAP running during brief outages until generator starts",
+    "action": "Select a UPS with sufficient runtime for the CPAP load"
+   },
+   {
+    "device": "Spare oxygen cylinders",
+    "why": "Ensures oxygen supply if concentrators lose power",
+    "action": "Obtain at least two full-size cylinders and a regulator"
+   }
+  ]
+ }
+}

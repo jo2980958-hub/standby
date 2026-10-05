@@ -1,0 +1,30 @@
+{
+ "county": {
+  "12011": {
+   "benes": 379106,
+   "power": 12033,
+   "oxygen": 2900,
+   "name": "Broward"
+  },
+  "48201": {
+   "benes": 667609,
+   "power": 22868,
+   "oxygen": 4334,
+   "name": "Harris"
+  },
+  "48453": {
+   "benes": 158498,
+   "power": 4519,
+   "oxygen": 1072,
+   "name": "Travis"
+  }
+ },
+ "zip": {
+  "33021": {
+   "benes": 10605,
+   "power": 380,
+   "oxygen": 97,
+   "name": "Hollywood"
+  }
+ }
+}

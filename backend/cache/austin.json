@@ -1,0 +1,168 @@
+{
+ "raw": {
+  "headline": "Household has only 8 hours backup against an 80-hour outage risk.",
+  "decision": "Leave for a powered location before the storm arrives because 8 hours backup is insufficient for the expected 80-hour outage.",
+  "items": [
+   {
+    "id": "p0d0",
+    "requirement": "Keep internal and external batteries fully charged before an outage.",
+    "gap": "Planned backup of 8 hours is far less than the 80-hour outage record.",
+    "actions": [
+     "Charge the internal battery fully.",
+     "Charge the external battery fully.",
+     "Test the ventilator on battery power monthly."
+    ]
+   },
+   {
+    "id": "p1d0",
+    "requirement": "Never operate the portable generator inside enclosed spaces.",
+    "gap": "Generator use in the garage creates deadly carbon monoxide risk.",
+    "actions": [
+     "Run the generator only outdoors, away from windows.",
+     "Install a carbon monoxide detector in the garage.",
+     "Check fuel and oil levels before each use."
+    ]
+   }
+  ],
+  "missing": [
+   {
+    "device": "Outdoor-rated generator",
+    "why": "To provide safe backup power without carbon monoxide risk indoors.",
+    "action": "Purchase and place an approved outdoor generator."
+   }
+  ],
+  "priority": [
+   {
+    "item_id": "p0d0",
+    "text": "Charge all ventilator batteries fully before storm."
+   },
+   {
+    "item_id": "household",
+    "text": "Obtain an outdoor-rated generator for safe backup power."
+   },
+   {
+    "item_id": "p1d0",
+    "text": "Never run the portable generator inside the garage."
+   }
+  ]
+ },
+ "pack": {
+  "household": {
+   "id": "austin",
+   "name": "Austin, TX household",
+   "place": "travis",
+   "place_label": "Travis County, TX",
+   "zip": null
+  },
+  "event": {
+   "key": "uri",
+   "name": "Winter Storm Uri",
+   "hours_over_10pct": 80,
+   "peak": 272957,
+   "peak_pct": 43,
+   "pct_72h": 4,
+   "out_72h_after_peak": 22589,
+   "harm": "25 deaths from interrupted dialysis or oxygen, frozen devices and medication, or power loss on life-sustaining equipment; 19 carbon monoxide deaths (Texas DSHS, Dec 2021)."
+  },
+  "empower": {
+   "scope": "county",
+   "benes": 158498,
+   "power": 4519,
+   "oxygen": 1072,
+   "name": "Travis"
+  },
+  "people": [
+   {
+    "name": "Priya",
+    "items": [
+     {
+      "id": "p0d0",
+      "device": "astral",
+      "label": "ResMed Astral",
+      "role": "Home ventilator",
+      "kind": "vent",
+      "opts": {
+       "external": "1"
+      },
+      "option_label": "1",
+      "status": "short",
+      "best_h": 16,
+      "plan_h": 8.0,
+      "need_h": 80,
+      "cover": "About 16 h typical use",
+      "facts": [
+       "Internal battery about 8 h typical, over 4 h worst case.",
+       "1 external battery(ies): 8 h each in typical use, two at most."
+      ],
+      "via_generator": false,
+      "source": "ResMed Astral 100/150 user guide",
+      "requirement": "Keep internal and external batteries fully charged before an outage.",
+      "gap": "Planned backup of 8 hours is far less than the 80-hour outage record.",
+      "actions": [
+       "Charge the internal battery fully.",
+       "Charge the external battery fully.",
+       "Test the ventilator on battery power monthly."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Garage",
+    "items": [
+     {
+      "id": "p1d0",
+      "device": "generator",
+      "label": "Portable generator",
+      "role": "Backup power",
+      "kind": "power",
+      "opts": {
+       "where": "garage"
+      },
+      "option_label": "In the garage",
+      "status": "gap",
+      "best_h": 0,
+      "plan_h": 0,
+      "need_h": 80,
+      "cover": "Unsafe where it runs",
+      "facts": [
+       "Exhaust carbon monoxide builds up in enclosed spaces, a garage included."
+      ],
+      "via_generator": false,
+      "source": "CDC MMWR 2018; Texas DSHS 2021",
+      "requirement": "Never operate the portable generator inside enclosed spaces.",
+      "gap": "Generator use in the garage creates deadly carbon monoxide risk.",
+      "actions": [
+       "Run the generator only outdoors, away from windows.",
+       "Install a carbon monoxide detector in the garage.",
+       "Check fuel and oil levels before each use."
+      ]
+     }
+    ]
+   }
+  ],
+  "plan_fraction": 0.5,
+  "headline": "Household has only 8 hours backup against an 80-hour outage risk.",
+  "decision": "Leave for a powered location before the storm arrives because 8 hours backup is insufficient for the expected 80-hour outage.",
+  "priority": [
+   {
+    "item_id": "p0d0",
+    "text": "Charge all ventilator batteries fully before storm."
+   },
+   {
+    "item_id": "household",
+    "text": "Obtain an outdoor-rated generator for safe backup power."
+   },
+   {
+    "item_id": "p1d0",
+    "text": "Never run the portable generator inside the garage."
+   }
+  ],
+  "missing": [
+   {
+    "device": "Outdoor-rated generator",
+    "why": "To provide safe backup power without carbon monoxide risk indoors.",
+    "action": "Purchase and place an approved outdoor generator."
+   }
+  ]
+ }
+}

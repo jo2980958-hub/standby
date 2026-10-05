@@ -1,0 +1,168 @@
+{
+ "raw": {
+  "headline": "Household lacks sufficient backup for 175-hour outage.",
+  "decision": "Leave for a powered location before the storm because current backup (0 h for insulin, unknown for CPAP) cannot cover the 175-hour outage.",
+  "items": [
+   {
+    "id": "p0d0",
+    "requirement": "Ensure DC converter and deep-cycle battery are installed and functional.",
+    "gap": "Cannot verify if battery lasts through 175-hour outage.",
+    "actions": [
+     "Test converter output matches 24 V, 3.75 A specification.",
+     "Charge the deep-cycle battery fully before the storm arrives.",
+     "Confirm battery rating supports CPAP runtime; note vehicle reserve limits."
+    ]
+   },
+   {
+    "id": "p1d0",
+    "requirement": "Have a powered cooler or ice packs ready before the power goes out.",
+    "gap": "No backup power; fridge will warm during 175-hour outage.",
+    "actions": [
+     "Obtain an insulated cooler large enough for insulin storage.",
+     "Pre-freeze ice packs and keep them in the cooler.",
+     "Monitor temperature regularly with a thermometer inside the cooler."
+    ]
+   }
+  ],
+  "missing": [
+   {
+    "device": "Portable generator",
+    "why": "To provide electricity for CPAP and fridge during extended outage.",
+    "action": "Purchase, test, and store fuel safely according to manufacturer instructions."
+   }
+  ],
+  "priority": [
+   {
+    "item_id": "p1d0",
+    "text": "Obtain insulated cooler, pre-freeze ice packs, monitor temperature."
+   },
+   {
+    "item_id": "p0d0",
+    "text": "Test converter output, charge battery fully, confirm rating supports CPAP."
+   },
+   {
+    "item_id": "household",
+    "text": "Purchase portable generator, test operation, store fuel safely."
+   }
+  ]
+ },
+ "pack": {
+  "household": {
+   "id": "houston",
+   "name": "Houston, TX household",
+   "place": "harris",
+   "place_label": "Harris County, TX",
+   "zip": null
+  },
+  "event": {
+   "key": "beryl",
+   "name": "Hurricane Beryl",
+   "hours_over_10pct": 175,
+   "peak": 1660701,
+   "peak_pct": 91,
+   "pct_72h": 45,
+   "out_72h_after_peak": 827389,
+   "harm": "Six of 13 Harris County storm deaths were heat exposure tied to the outage (Harris County IFS, early count reported 18 Jul 2024)."
+  },
+  "empower": {
+   "scope": "county",
+   "benes": 667609,
+   "power": 22868,
+   "oxygen": 4334,
+   "name": "Harris"
+  },
+  "people": [
+   {
+    "name": "Lena",
+    "items": [
+     {
+      "id": "p0d0",
+      "device": "airsense",
+      "label": "ResMed AirSense 11",
+      "role": "CPAP",
+      "kind": "sleep",
+      "opts": {
+       "battery": "converter"
+      },
+      "option_label": "DC converter and deep-cycle battery",
+      "status": "check",
+      "best_h": null,
+      "plan_h": null,
+      "need_h": 175,
+      "cover": "Depends on the battery's capacity",
+      "facts": [
+       "Converter input 12 V or 24 V; output 24 V, 3.75 A.",
+       "A vehicle battery may not keep enough reserve to start the vehicle."
+      ],
+      "via_generator": false,
+      "source": "ResMed Air11 DC-DC converter user guide",
+      "requirement": "Ensure DC converter and deep-cycle battery are installed and functional.",
+      "gap": "Cannot verify if battery lasts through 175-hour outage.",
+      "actions": [
+       "Test converter output matches 24 V, 3.75 A specification.",
+       "Charge the deep-cycle battery fully before the storm arrives.",
+       "Confirm battery rating supports CPAP runtime; note vehicle reserve limits."
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Omar",
+    "items": [
+     {
+      "id": "p1d0",
+      "device": "insulin",
+      "label": "Insulin",
+      "role": "Refrigerated medication",
+      "kind": "cold",
+      "opts": {
+       "cold": "fridge"
+      },
+      "option_label": "Fridge only",
+      "status": "gap",
+      "best_h": 0,
+      "plan_h": 0,
+      "need_h": 175,
+      "cover": "None",
+      "facts": [
+       "Fridge only; warms when the power stops."
+      ],
+      "via_generator": false,
+      "source": "Storage limits are on the product label, not in the sources we hold",
+      "requirement": "Have a powered cooler or ice packs ready before the power goes out.",
+      "gap": "No backup power; fridge will warm during 175-hour outage.",
+      "actions": [
+       "Obtain an insulated cooler large enough for insulin storage.",
+       "Pre-freeze ice packs and keep them in the cooler.",
+       "Monitor temperature regularly with a thermometer inside the cooler."
+      ]
+     }
+    ]
+   }
+  ],
+  "plan_fraction": 0.5,
+  "headline": "Household lacks sufficient backup for 175-hour outage.",
+  "decision": "Leave for a powered location before the storm because current backup (0 h for insulin, unknown for CPAP) cannot cover the 175-hour outage.",
+  "priority": [
+   {
+    "item_id": "p1d0",
+    "text": "Obtain insulated cooler, pre-freeze ice packs, monitor temperature."
+   },
+   {
+    "item_id": "p0d0",
+    "text": "Test converter output, charge battery fully, confirm rating supports CPAP."
+   },
+   {
+    "item_id": "household",
+    "text": "Purchase portable generator, test operation, store fuel safely."
+   }
+  ],
+  "missing": [
+   {
+    "device": "Portable generator",
+    "why": "To provide electricity for CPAP and fridge during extended outage.",
+    "action": "Purchase, test, and store fuel safely according to manufacturer instructions."
+   }
+  ]
+ }
+}
